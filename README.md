@@ -1,0 +1,10 @@
+# monorepo
+# monorepo
+# mono-repo
+# mono_repo
+# monorepo
+# mono
+# monorepo
+# monorepo
+# monorepo
+# mono
