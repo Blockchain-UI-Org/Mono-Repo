@@ -1,8 +1,25 @@
 {
   "name": "@blockchainui/components",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0-alpha.1",
+  "license": "MIT",
+  "private": false,
   "main": "./src/index.tsx",
+  "description": "A component library for blockchain apps.",
+  "homepage": "https://www.blockchain-ui.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Blockchain-UI-Org/Library.git"
+  },
+  "keywords": [
+    "blockchain",
+    "web3",
+    "ui",
+    "crypto"
+  ],
+  "author": "Chris Igbojekwe <contact@blockchain-ui.com>",
+  "bugs": {
+    "url": "https://github.com/Blockchain-UI-Org/Library/issues"
+  },
   "dependencies": {
     "@mui/material": "^5.11.0",
     "@storybook/theming": "^6.5.14",
