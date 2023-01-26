@@ -1,20 +1,13 @@
 import { FunctionComponent } from "react";
 import styled, { css } from "styled-components";
-import {
-  ErrorMessage,
-  Label,
-  Container,
-  StyledInput,
-  ErrorWrapper,
-} from "../input/input";
+import { ErrorMessage, Label, Container, StyledInput, ErrorWrapper } from "../input/input";
 import { CryptoIcon } from "../icon/icon";
 import { CryptoSymbols } from "../static/types/crypto";
 import { withTheme } from "../../theme";
 
 // const { black, grey300, blue100, blue500, error500, grey700 } = colors;
 
-export interface NumberInputProps
-  extends React.InputHTMLAttributes<HTMLInputElement> {
+export interface NumberInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label?: string;
   error?: string;
   block?: boolean;
@@ -47,25 +40,16 @@ export const NumberInput: FunctionComponent<NumberInputProps> = ({
     <Container block={block}>
       <InputHeader>
         {label && <Label htmlFor={label}>{label}</Label>}
-        {balanceAmount && (
-          <Balance size={balanceSize}>Balance: {balanceAmount}</Balance>
-        )}
+        {balanceAmount && <Balance size={balanceSize}>Balance: {balanceAmount}</Balance>}
       </InputHeader>
       <InputContainer hasError={hasError}>
         {icon && <CryptoIcon size="small" cryptoSymbol={icon} />}
-        <CustomInput
-          onKeyDown={blockInvalidChar}
-          type="number"
-          id={label}
-          {...props}
-        />
+        <CustomInput onKeyDown={blockInvalidChar} type="number" id={label} {...props} />
         {handleMax && <MaxButton onClick={handleMax}>Max</MaxButton>}
       </InputContainer>
       <ErrorWrapper>
         {hasError && <ErrorMessage>{error}</ErrorMessage>}
-        {errorAction?.onClick && (
-          <button onClick={errorAction.onClick}>{errorAction.text}</button>
-        )}
+        {errorAction?.onClick && <button onClick={errorAction.onClick}>{errorAction.text}</button>}
       </ErrorWrapper>
     </Container>
   );
@@ -73,7 +57,7 @@ export const NumberInput: FunctionComponent<NumberInputProps> = ({
 
 const InputContainer = styled.div<{ hasError: boolean }>`
   display: flex;
-  border: 1px solid ${withTheme(({theme}) => theme.colors.grey[300])};
+  border: 1px solid ${withTheme(({ theme }) => theme.colors.grey[300])};
   border-radius: 8px;
   width: auto;
   align-items: center;
@@ -84,14 +68,14 @@ const InputContainer = styled.div<{ hasError: boolean }>`
   box-sizing: border-box;
 
   &:focus-within {
-    border-color: ${withTheme(({theme}) => theme.colors.grey[300])};
-    color: ${withTheme(({theme}) => theme.colors.common.black)};
+    border-color: ${withTheme(({ theme }) => theme.colors.grey[300])};
+    color: ${withTheme(({ theme }) => theme.colors.common.black)};
   }
 
   ${({ hasError }) =>
     hasError &&
     css`
-      border-color: ${withTheme(({theme}) => theme.colors.error.color)};
+      border-color: ${withTheme(({ theme }) => theme.colors.error.color)};
     `}
 `;
 
@@ -101,8 +85,8 @@ const CustomInput = styled(StyledInput)`
 `;
 
 const MaxButton = styled.button`
-  background-color: ${withTheme(({theme}) => theme.colors.info.bg)};
-  color: ${withTheme(({theme}) => theme.colors.info.midtone)};
+  background-color: ${withTheme(({ theme }) => theme.colors.info.bg)};
+  color: ${withTheme(({ theme }) => theme.colors.info.midtone)};
   border: none;
   border-radius: 20px;
   height: 24px;
@@ -116,7 +100,7 @@ const MaxButton = styled.button`
 const Balance = styled.div<{ size: "regular" | "small" }>`
   font-size: ${({ size }) => (size === "regular" ? "16px" : "14px")};
   font-weight: 400;
-  color: ${withTheme(({theme}) => theme.colors.grey[700])};;
+  color: ${withTheme(({ theme }) => theme.colors.grey[700])};
   font-family: inherit;
 `;
 

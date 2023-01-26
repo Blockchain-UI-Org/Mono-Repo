@@ -26,21 +26,16 @@ export const Pagination = styled(Flex)<PaginationProps>`
     padding: 2px 8px;
     user-select: none;
     :hover {
-      cursor: ${({ $disablePrev }: any) =>
-        $disablePrev ? "not-allowed" : "pointer"};
+      cursor: ${({ $disablePrev }: any) => ($disablePrev ? "not-allowed" : "pointer")};
       background-color: ${withTheme(({ $disablePrev, theme }) =>
         $disablePrev ? "inherit" : theme.colors.info.midtone
       )};
     }
 
-    color: ${withTheme(({ $disablePrev, theme }) =>
-      $disablePrev ? theme.colors.grey[700] : theme.colors.grey[200]
-    )};
+    color: ${withTheme(({ $disablePrev, theme }) => ($disablePrev ? theme.colors.grey[700] : theme.colors.grey[200]))};
 
     border: ${withTheme(({ $disablePrev, theme }) =>
-      $disablePrev
-        ? "2px solid inherit"
-        : `2px solid ${theme.colors.info.midtone}`
+      $disablePrev ? "2px solid inherit" : `2px solid ${theme.colors.info.midtone}`
     )};
   }
 
@@ -51,21 +46,16 @@ export const Pagination = styled(Flex)<PaginationProps>`
     padding: 2px 8px;
     user-select: none;
     :hover {
-      cursor: ${({ $disableNext }: any) =>
-        $disableNext ? "not-allowed" : "pointer"};
+      cursor: ${({ $disableNext }: any) => ($disableNext ? "not-allowed" : "pointer")};
       background-color: ${withTheme(({ $disableNext, theme }) =>
         $disableNext ? "inherit" : theme.colors.info.midtone
       )};
     }
 
-    color: ${withTheme(({ $disableNext, theme }) =>
-      $disableNext ? theme.colors.grey[700] : theme.colors.grey[200]
-    )};
+    color: ${withTheme(({ $disableNext, theme }) => ($disableNext ? theme.colors.grey[700] : theme.colors.grey[200]))};
 
     border: ${withTheme(({ $disableNext, theme }) =>
-      $disableNext
-        ? "2px solid inherit"
-        : `2px solid ${theme.colors.info.midtone}`
+      $disableNext ? "2px solid inherit" : `2px solid ${theme.colors.info.midtone}`
     )};
   }
 `;

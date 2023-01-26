@@ -2,7 +2,6 @@ import { FC, ImgHTMLAttributes, useEffect, useState } from "react";
 import styled from "styled-components";
 import * as availableImages from "../static/images";
 
-
 export interface ImageProps extends ImgHTMLAttributes<HTMLImageElement> {
   name: string;
   src?: string;
@@ -21,12 +20,7 @@ const StyledImage = styled.img<StyledImageProps>`
   background-color: ${({ bgColor }) => bgColor};
 `;
 
-const Image: FC<ImageProps> = ({
-  name,
-  src,
-  iconType = "regular",
-  ...props
-}) => {
+const Image: FC<ImageProps> = ({ name, src, iconType = "regular", ...props }) => {
   const [imageSrc, setImageSrc] = useState<string>();
 
   useEffect(() => {
@@ -39,14 +33,7 @@ const Image: FC<ImageProps> = ({
     }
   }, [iconType, name, src]);
 
-  return (
-    <StyledImage
-      src={imageSrc}
-      data-testid={`${name}-image`}
-      alt={`${name}-image`}
-      {...props}
-    />
-  );
+  return <StyledImage src={imageSrc} data-testid={`${name}-image`} alt={`${name}-image`} {...props} />;
 };
 
 export const RoundImage = styled(Image)`

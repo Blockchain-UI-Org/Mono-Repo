@@ -133,9 +133,7 @@ const ProgressBar: FC<ProgressBarProps> = ({
         data-testid="gradient-progress-bar"
       />
     </Wrapper>
-    {errorMessage && (
-      <ErrorMessage data-testid="gradient-progress-bar-error-msg">{errorMessage}</ErrorMessage>
-    )}
+    {errorMessage && <ErrorMessage data-testid="gradient-progress-bar-error-msg">{errorMessage}</ErrorMessage>}
   </Container>
 );
 

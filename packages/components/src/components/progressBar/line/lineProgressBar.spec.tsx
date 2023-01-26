@@ -6,13 +6,7 @@ import GradientProgressBar from ".";
 describe("Button", () => {
   it("should render successfully", () => {
     const { baseElement } = render(
-      <GradientProgressBar
-        minValue={0}
-        maxValue={100}
-        value={50}
-        title="mock title"
-        themeColor="blue"
-      />
+      <GradientProgressBar minValue={0} maxValue={100} value={50} title="mock title" themeColor="blue" />
     );
     const component = screen.getByTestId("gradient-progress-bar");
     expect(baseElement).toBeTruthy();
@@ -20,15 +14,7 @@ describe("Button", () => {
   });
 
   it("render the max value even when the value is greater than the max value", () => {
-    render(
-      <GradientProgressBar
-        minValue={0}
-        maxValue={100}
-        value={500}
-        title="mock title"
-        showValue={true}
-      />
-    );
+    render(<GradientProgressBar minValue={0} maxValue={100} value={500} title="mock title" showValue={true} />);
     const component = screen.getByTestId("gradient-progress-bar-value");
     expect(component.innerHTML).toBe("100+");
   });

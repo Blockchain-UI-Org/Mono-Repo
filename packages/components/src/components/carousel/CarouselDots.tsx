@@ -1,7 +1,7 @@
-import { ReactNode } from 'react';
+import { ReactNode } from "react";
 // @mui
-import { styled } from '@mui/material/styles';
-import { Box, BoxProps } from '@mui/material';
+import { styled } from "@mui/material/styles";
+import { Box, BoxProps } from "@mui/material";
 
 // ----------------------------------------------------------------------
 
@@ -10,22 +10,22 @@ type RootStyleProps = {
 };
 
 const RootStyle = styled(Box, {
-  shouldForwardProp: (prop) => prop !== 'rounded',
+  shouldForwardProp: (prop) => prop !== "rounded",
 })<RootStyleProps>(({ rounded }) => ({
-  display: 'flex',
-  listStyle: 'none',
-  alignItems: 'center',
-  justifyContent: 'center',
-  '& li': {
+  display: "flex",
+  listStyle: "none",
+  alignItems: "center",
+  justifyContent: "center",
+  "& li": {
     width: 18,
     height: 18,
     opacity: 0.32,
-    cursor: 'pointer',
+    cursor: "pointer",
   },
-  '& li.slick-active': {
+  "& li.slick-active": {
     opacity: 1,
     ...(rounded && {
-      '& .dotActive': {
+      "& .dotActive": {
         width: 16,
         borderRadius: 6,
       },
@@ -33,19 +33,19 @@ const RootStyle = styled(Box, {
   },
 }));
 
-const DotWrapStyle = styled('div')(() => ({
-  width: '100%',
-  height: '100%',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
+const DotWrapStyle = styled("div")(() => ({
+  width: "100%",
+  height: "100%",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
 }));
 
-const DotStyle = styled('span')(({ theme }) => ({
+const DotStyle = styled("span")(({ theme }) => ({
   width: 8,
   height: 8,
-  borderRadius: '50%',
-  transition: theme.transitions.create('width', {
+  borderRadius: "50%",
+  transition: theme.transitions.create("width", {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.short,
   }),
@@ -75,7 +75,7 @@ export default function CarouselDots(props?: Props) {
         <DotStyle
           className="dotActive"
           sx={{
-            bgcolor: color || 'primary.main',
+            bgcolor: color || "primary.main",
           }}
         />
       </DotWrapStyle>

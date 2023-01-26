@@ -7,8 +7,7 @@ export interface ErrorAction {
   text: string;
 }
 
-export interface InputProps
-  extends React.InputHTMLAttributes<HTMLInputElement> {
+export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label?: string;
   error?: string;
   block?: boolean;
@@ -18,13 +17,7 @@ export interface InputProps
   };
 }
 
-export const Input: FunctionComponent<InputProps> = ({
-  error,
-  label,
-  block = false,
-  errorAction,
-  ...props
-}) => {
+export const Input: FunctionComponent<InputProps> = ({ error, label, block = false, errorAction, ...props }) => {
   const hasError = !!error?.trim();
   return (
     <Container block={block}>
@@ -32,9 +25,7 @@ export const Input: FunctionComponent<InputProps> = ({
       <StyledInput hasError={hasError} id={label} {...props} />
       <ErrorWrapper>
         {hasError && <ErrorMessage>{error}</ErrorMessage>}
-        {errorAction?.onClick && (
-          <button onClick={errorAction.onClick}>{errorAction.text}</button>
-        )}
+        {errorAction?.onClick && <button onClick={errorAction.onClick}>{errorAction.text}</button>}
       </ErrorWrapper>
     </Container>
   );
@@ -81,9 +72,7 @@ export const StyledInput = styled.input<StyledInputType>`
     outline: none;
   }
   &:focus-visible {
-    border-color: ${withTheme(
-      ({ theme }) => theme.components.Input.box.focusVisible.borderColor
-    )};
+    border-color: ${withTheme(({ theme }) => theme.components.Input.box.focusVisible.borderColor)};
     color: ${withTheme(({ theme }) => theme.colors.common.black)};
   }
 
@@ -106,9 +95,7 @@ export const ErrorWrapper = styled.div`
     border: none;
     background: none;
     cursor: pointer;
-    color: ${withTheme(
-      ({ theme }) => theme.components.Input.box.focusVisible.borderColor
-    )};;
+    color: ${withTheme(({ theme }) => theme.components.Input.box.focusVisible.borderColor)};
     font-family: ${withTheme(({ theme }) => theme.typography.common.fontFamily)};
     font-size: 16px;
   }

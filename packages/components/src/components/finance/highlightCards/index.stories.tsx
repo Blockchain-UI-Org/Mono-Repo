@@ -25,9 +25,7 @@ export default {
 } as Meta;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: Story<HighlightCardProps> = (args) => (
-  <HighlightCard {...args} />
-);
+const Template: Story<HighlightCardProps> = (args) => <HighlightCard {...args} />;
 
 export const Line = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args

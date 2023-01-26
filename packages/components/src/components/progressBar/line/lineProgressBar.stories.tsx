@@ -67,47 +67,18 @@ Error.args = {
 export const Stacked = () => {
   return (
     <StackedWrapper>
-      <Template
-        minValue={0}
-        maxValue={10}
-        value={5}
-        title="gradientProgressBar"
-      />
+      <Template minValue={0} maxValue={10} value={5} title="gradientProgressBar" />
       <GreenBar>
-        <Template
-          minValue={0}
-          maxValue={10}
-          value={5}
-          themeColor="green"
-          title="greenProgressBar"
-        />
+        <Template minValue={0} maxValue={10} value={5} themeColor="green" title="greenProgressBar" />
       </GreenBar>
       <BrownBar>
-        <Template
-          minValue={0}
-          maxValue={10}
-          value={5}
-          themeColor="yellow"
-          title="brownProgressBar"
-        />
+        <Template minValue={0} maxValue={10} value={5} themeColor="yellow" title="brownProgressBar" />
       </BrownBar>
       <RedBar>
-        <Template
-          minValue={0}
-          maxValue={10}
-          value={5}
-          themeColor="red"
-          title="redProgressBar"
-        />
+        <Template minValue={0} maxValue={10} value={5} themeColor="red" title="redProgressBar" />
       </RedBar>
       <BlueBar>
-        <Template
-          minValue={0}
-          maxValue={10}
-          value={5}
-          themeColor="blue"
-          title="blueProgressBar"
-        />
+        <Template minValue={0} maxValue={10} value={5} themeColor="blue" title="blueProgressBar" />
       </BlueBar>
     </StackedWrapper>
   );

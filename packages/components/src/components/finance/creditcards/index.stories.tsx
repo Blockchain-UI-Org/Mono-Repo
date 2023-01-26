@@ -17,9 +17,7 @@ export default {
 } as ComponentMeta<typeof CreditCard>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof CreditCard> = (args) => (
-  <CreditCard {...args} />
-);
+const Template: ComponentStory<typeof CreditCard> = (args) => <CreditCard {...args} />;
 
 export const Default = Template.bind({});
 

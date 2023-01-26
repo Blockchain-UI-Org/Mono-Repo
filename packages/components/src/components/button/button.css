@@ -1,9 +1,8 @@
 @import url(//fonts.googleapis.com/css?family=Public+Sans);
 
 .web3-ui-button {
-  font-family: "Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
-    "Helvetica Neue", sans-serif;
+  font-family: "Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   font-weight: 700;
   border: 0;
   border-radius: 3em;

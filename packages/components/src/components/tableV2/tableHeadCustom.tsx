@@ -1,14 +1,6 @@
 // @mui
 import { Theme } from "@mui/material/styles";
-import {
-  Box,
-  SxProps,
-  Checkbox,
-  TableRow,
-  TableCell,
-  TableHead,
-  TableSortLabel,
-} from "@mui/material";
+import { Box, SxProps, Checkbox, TableRow, TableCell, TableHead, TableSortLabel } from "@mui/material";
 import styled from "styled-components";
 
 // ----------------------------------------------------------------------
@@ -56,9 +48,7 @@ export default function TableHeadCustom({
             <Checkbox
               indeterminate={numSelected > 0 && numSelected < rowCount}
               checked={rowCount > 0 && numSelected === rowCount}
-              onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-                onSelectAllRows(event.target.checked)
-              }
+              onChange={(event: React.ChangeEvent<HTMLInputElement>) => onSelectAllRows(event.target.checked)}
             />
           </TableCell>
         )}
@@ -81,11 +71,7 @@ export default function TableHeadCustom({
                 {headCell.label}
 
                 {orderBy === headCell.id ? (
-                  <Box sx={{ ...visuallyHidden }}>
-                    {order === "desc"
-                      ? "sorted descending"
-                      : "sorted ascending"}
-                  </Box>
+                  <Box sx={{ ...visuallyHidden }}>{order === "desc" ? "sorted descending" : "sorted ascending"}</Box>
                 ) : null}
               </TableSortLabel>
             ) : (

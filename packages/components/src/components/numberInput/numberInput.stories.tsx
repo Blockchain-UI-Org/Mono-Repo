@@ -6,9 +6,7 @@ export default {
   title: "Input/ Numerical Input",
 } as Meta;
 
-const Template: Story<NumberInputProps> = (args) => (
-  <NumberInput {...args}></NumberInput>
-);
+const Template: Story<NumberInputProps> = (args) => <NumberInput {...args}></NumberInput>;
 
 export const NumericInput = Template.bind({});
 

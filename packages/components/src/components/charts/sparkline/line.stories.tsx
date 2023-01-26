@@ -21,7 +21,7 @@ export default {
 } as Meta<typeof SparkLine>;
 
 const Template: Story = (args) => {
-  return <SparkLine chartData={[]} {...args} chartType="line"/>;
+  return <SparkLine chartData={[]} {...args} chartType="line" />;
 };
 
 export const Basic = Template.bind({});

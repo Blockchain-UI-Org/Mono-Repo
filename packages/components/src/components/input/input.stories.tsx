@@ -1,28 +1,28 @@
-import { Story, Meta } from '@storybook/react';
-import { Input, InputProps } from './input';
+import { Story, Meta } from "@storybook/react";
+import { Input, InputProps } from "./input";
 
 export default {
   component: Input,
-  title: 'Input/ Input',
+  title: "Input/ Input",
 } as Meta;
 
-const Template: Story<InputProps> = args => <Input {...args}></Input>;
+const Template: Story<InputProps> = (args) => <Input {...args}></Input>;
 
 export const Basic = Template.bind({});
 
 Basic.args = {
-  label: 'Label',
+  label: "Label",
 };
 
 export const Error = Template.bind({});
 
 Error.args = {
-  label: 'Label',
-  error: 'Error Message',
+  label: "Label",
+  error: "Error Message",
   errorAction: {
     onClick: () => {
-      alert('clicked');
+      alert("clicked");
     },
-    text: 'Take action',
+    text: "Take action",
   },
 };

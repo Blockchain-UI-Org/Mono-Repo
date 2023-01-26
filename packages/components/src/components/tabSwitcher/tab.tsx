@@ -1,7 +1,6 @@
-import { FunctionComponent } from 'react';
-import styled, { css } from 'styled-components';
-import { withTheme } from '../../theme';
-
+import { FunctionComponent } from "react";
+import styled, { css } from "styled-components";
+import { withTheme } from "../../theme";
 
 export interface TabProps {
   title: string | JSX.Element;
@@ -10,19 +9,9 @@ export interface TabProps {
   position: number;
 }
 
-export const Tab: FunctionComponent<TabProps> = ({
-  title,
-  isActive = false,
-  onClick,
-  position,
-}) => {
+export const Tab: FunctionComponent<TabProps> = ({ title, isActive = false, onClick, position }) => {
   return (
-    <TabWrapper
-      isText={typeof title === 'string'}
-      position={position}
-      onClick={onClick}
-      isActive={isActive}
-    >
+    <TabWrapper isText={typeof title === "string"} position={position} onClick={onClick} isActive={isActive}>
       {title}
     </TabWrapper>
   );
@@ -38,7 +27,7 @@ const TabWrapper = styled.div<{
   padding: 8px;
   border-radius: 100px;
   min-width: 48px;
-  width: ${({ isText }) => (isText ? '204px' : 'fit-content')};
+  width: ${({ isText }) => (isText ? "204px" : "fit-content")};
   color: ${withTheme(({ isActive, theme }) => (isActive ? theme.colors.common.black : theme.colors.grey[700]))};
   display: flex;
   justify-content: center;

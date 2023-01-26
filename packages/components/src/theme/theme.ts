@@ -1,14 +1,13 @@
 import { colors } from "./colors";
 import media from "./media";
 import { shadow } from "./shadow";
-import {  createIconTheme, IIconTheme } from "./icons";
+import { createIconTheme, IIconTheme } from "./icons";
 import { Subset } from "../typeutils";
 import { ICreditCardTheme } from "./creditcard";
 import { IChartTheme } from "./chart";
 import { IProgressBarTheme } from "./progressbar";
 import { IInputTheme } from "./input";
 import { createTypography, ITypographyTheme } from "./typography";
-
 
 type IColorVariant = {
   bg: string;
@@ -50,11 +49,7 @@ export interface ThemeInterface {
   };
 }
 
-
-
-export const createTheme = (
-  args: Subset<ThemeInterface> = {}
-): ThemeInterface => {
+export const createTheme = (args: Subset<ThemeInterface> = {}): ThemeInterface => {
   const typography = createTypography();
 
   const green = {
@@ -182,7 +177,7 @@ export const createTheme = (
           polarSpokeConnectorColor: colors.grey500,
         },
       },
-      Icons: createIconTheme()
+      Icons: createIconTheme(),
     },
     shadows: shadow,
 

@@ -40,17 +40,8 @@ const HighlightCard: FC<HighlightCardProps> = ({
 
         <div className="additionalDetails">
           {" "}
-          <IconWrapperStyle
-            $color={color}
-            $positive={percent >= 0 ? "green" : "red"}
-          >
-            <Iconify
-              width={14}
-              height={14}
-              icon={
-                percent >= 0 ? "eva:trending-up-fill" : "eva:trending-down-fill"
-              }
-            />
+          <IconWrapperStyle $color={color} $positive={percent >= 0 ? "green" : "red"}>
+            <Iconify width={14} height={14} icon={percent >= 0 ? "eva:trending-up-fill" : "eva:trending-down-fill"} />
           </IconWrapperStyle>
           <T1 $color={color}>
             {percent > 0 && "+"} {percent}%{""}
@@ -136,16 +127,16 @@ const IconWrapperStyle = styled.div<WrapperStyleProps>`
   background-color: ${withTheme(({ $color, $positive, theme }) =>
     $color === "default"
       ? theme.components.CreditCard.variants[$positive].highlightDark
-      : theme.components.CreditCard.variants[$positive].background)};
-  color: ${withTheme(({  $positive, theme }) => theme.components.CreditCard.variants[$positive].highlightLight)};
+      : theme.components.CreditCard.variants[$positive].background
+  )};
+  color: ${withTheme(({ $positive, theme }) => theme.components.CreditCard.variants[$positive].highlightLight)};
 `;
 
 interface T1Props {
   $color: string;
 }
 const T1 = styled.div<T1Props>`
-  color: ${withTheme(({ $color, theme }) =>
-    $color === "default" ? theme.colors.grey[100] : theme.colors.grey[700])};
+  color: ${withTheme(({ $color, theme }) => ($color === "default" ? theme.colors.grey[100] : theme.colors.grey[700]))};
 `;
 
 const T2 = styled.div`

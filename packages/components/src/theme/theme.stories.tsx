@@ -12,9 +12,7 @@ interface ThemeProps {
 
 const colorDisplay = (darkTheme: boolean) => {
   const display: ReactElement[] = [];
-  for (const [key, value] of Object.entries(
-    darkTheme ? DarkTheme.colors : DefaultTheme.colors
-  ).sort(function (a, b) {
+  for (const [key, value] of Object.entries(darkTheme ? DarkTheme.colors : DefaultTheme.colors).sort(function (a, b) {
     const nameA = a[0].toLowerCase(),
       nameB = b[0].toLowerCase();
     if (nameA < nameB)
@@ -68,10 +66,7 @@ const breakPointsDisplay = (width: number) => {
   );
 };
 
-const Theme: React.FC<ThemeProps> = ({
-  darkTheme = false,
-  story = "colors",
-}) => {
+const Theme: React.FC<ThemeProps> = ({ darkTheme = false, story = "colors" }) => {
   const { width } = useWindowSize();
   const handleDisplay = () => {
     if (story === "colors") {

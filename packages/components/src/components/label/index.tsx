@@ -3,24 +3,10 @@ import { alpha, Theme, useTheme, styled } from "@mui/material/styles";
 import { BoxProps, Box } from "@mui/material";
 // theme
 
-
-export type ColorSchema =
-  | "primary"
-  | "secondary"
-  | "info"
-  | "success"
-  | "warning"
-  | "error";
+export type ColorSchema = "primary" | "secondary" | "info" | "success" | "warning" | "error";
 // ----------------------------------------------------------------------
 
-type LabelColor =
-  | "default"
-  | "primary"
-  | "secondary"
-  | "info"
-  | "success"
-  | "warning"
-  | "error";
+type LabelColor = "default" | "primary" | "secondary" | "info" | "success" | "warning" | "error";
 
 type LabelVariant = "filled" | "outlined" | "ghost";
 
@@ -84,9 +70,7 @@ const RootStyle = styled("span")(
               border: `1px solid ${alpha("#919EAB", 0.16)}`,
             }),
             ...(variant === "ghost" && {
-              color: isLight
-                ? theme.palette.text.secondary
-                : theme.palette.common.white,
+              color: isLight ? theme.palette.text.secondary : theme.palette.common.white,
               backgroundColor: alpha("#919EAB", 0.16),
             }),
           }),
@@ -103,14 +87,7 @@ interface Props extends BoxProps {
   variant?: LabelVariant;
 }
 
-export default function Label({
-  children,
-  color = "default",
-  variant = "ghost",
-  startIcon,
-  endIcon,
-  sx,
-}: Props) {
+export default function Label({ children, color = "default", variant = "ghost", startIcon, endIcon, sx }: Props) {
   const theme = useTheme();
 
   const style = {

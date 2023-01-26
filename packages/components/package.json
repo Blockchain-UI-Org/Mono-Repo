@@ -1,9 +1,9 @@
 {
-  "name": "@blockchainui/components",
+  "name": "blockchain-ui",
   "version": "1.0.0-alpha.1",
   "license": "MIT",
-  "private": false,
   "main": "./src/index.tsx",
+  "private": false,
   "description": "A component library for blockchain apps.",
   "homepage": "https://www.blockchain-ui.com",
   "repository": {
@@ -21,6 +21,9 @@
     "url": "https://github.com/Blockchain-UI-Org/Library/issues"
   },
   "dependencies": {
+    "typescript": "^4.9.3"
+  },
+  "devDependencies": {
     "@mui/material": "^5.11.0",
     "@storybook/theming": "^6.5.14",
     "@types/numeral": "^2.0.2",
@@ -41,11 +44,7 @@
     "simplebar-react": "^2.4.3",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.6",
-    "typescript": "^4.9.3",
-    "web-vitals": "^2.1.4",
-    "webfontloader": "^1.6.28"
-  },
-  "devDependencies": {
+    "webfontloader": "^1.6.28",
     "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.10.0",
     "@iconify/react": "^4.0.1",

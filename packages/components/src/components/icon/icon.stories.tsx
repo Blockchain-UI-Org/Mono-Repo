@@ -40,9 +40,7 @@ const imageDisplay = (args) => {
   return display;
 };
 
-const AllIconsTemplate: Story<IconProps> = (args) => (
-  <Layout>{imageDisplay(args)}</Layout>
-);
+const AllIconsTemplate: Story<IconProps> = (args) => <Layout>{imageDisplay(args)}</Layout>;
 
 export const AvailableIcons = AllIconsTemplate.bind({});
 AvailableIcons.args = {

@@ -1,16 +1,23 @@
 {
   "name": "@blockchainui/root",
   "private": true,
+  "license": "MIT",
   "devDependencies": {
     "craco": "^0.0.3",
     "lerna": "^4.0.0"
   },
   "scripts": {
-    "start": "lerna exec --scope @blockchainui/app -- yarn start"
+    "story": "cd packages/components && yarn storybook",
+    "build": "npx lerna run build",
+    "app": "npx lerna exec --scope @blockchainui/app -- yarn start",
+    "chromatic": "cd packages/components && npx chromatic --project-token=486802020566",
+    "prettify": "prettier --write ./packages",
+    "publish-library": "cd packages/components && npm publish"
   },
   "workspaces": {
     "packages": [
       "packages/**"
     ]
-  }
+  },
+  "version": "0.0.0"
 }

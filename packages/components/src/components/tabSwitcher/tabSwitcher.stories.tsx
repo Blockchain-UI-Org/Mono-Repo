@@ -1,13 +1,13 @@
-import { Story, Meta } from '@storybook/react';
-import { TabSwitcher, TabSwitcherProps } from './tabSwitcher';
-import { mockedTabs } from './mockedTabs';
+import { Story, Meta } from "@storybook/react";
+import { TabSwitcher, TabSwitcherProps } from "./tabSwitcher";
+import { mockedTabs } from "./mockedTabs";
 
 export default {
   component: TabSwitcher,
-  title: 'General/ Tab Switcher',
+  title: "General/ Tab Switcher",
 } as Meta;
 
-const Template: Story<TabSwitcherProps> = args => <TabSwitcher {...args}></TabSwitcher>;
+const Template: Story<TabSwitcherProps> = (args) => <TabSwitcher {...args}></TabSwitcher>;
 
 export const Basic = Template.bind({});
 

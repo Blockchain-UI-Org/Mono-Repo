@@ -25,7 +25,6 @@ const Container = styled.div`
   border-radius: 15px;
   overflow: hidden;
   margin: 10px 15px;
-  
 `;
 
 interface ImageProps {

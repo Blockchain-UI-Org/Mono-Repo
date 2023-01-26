@@ -8,9 +8,7 @@ export default {
   title: "Indicators/LoadingSpinner",
 } as Meta;
 
-const Template: Story<LoadingSpinnerProps> = (args) => (
-  <LoadingSpinner {...args} />
-);
+const Template: Story<LoadingSpinnerProps> = (args) => <LoadingSpinner {...args} />;
 
 export const Basic = Template.bind({});
 
@@ -28,9 +26,7 @@ const LoadingButton: React.FC<ButtonProps> = ({ title, loading }) => {
   return <Button>{loading ? <LoadingSpinner /> : title}</Button>;
 };
 
-const LoadingButtonTemplate: Story<ButtonProps> = (args) => (
-  <LoadingButton {...args} />
-);
+const LoadingButtonTemplate: Story<ButtonProps> = (args) => <LoadingButton {...args} />;
 
 export const BasicLoadingButton = LoadingButtonTemplate.bind({});
 

@@ -10,23 +10,11 @@ export interface CircleBarProps {
   percent: number;
 }
 
-export const CircleProgressBar: FC<CircleBarProps> = ({
-  themeColor = "default",
-  percent = 0,
-}) => {
+export const CircleProgressBar: FC<CircleBarProps> = ({ themeColor = "default", percent = 0 }) => {
   return (
     <CircleProgressBarBase $colorMode={themeColor} $percent={100 - percent}>
-      <svg
-        className="circleContainer"
-        viewBox="2 -2 28 36"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <circle
-          className="circleContainerBackground"
-          r="16"
-          cx="16"
-          cy="16"
-        ></circle>
+      <svg className="circleContainer" viewBox="2 -2 28 36" xmlns="http://www.w3.org/2000/svg">
+        <circle className="circleContainerBackground" r="16" cx="16" cy="16"></circle>
         <circle className="circleOffset" r="16" cx="16" cy="16"></circle>
       </svg>
       <Percent>{percent}%</Percent>
@@ -46,7 +34,7 @@ const Percent = styled.div`
   position: fixed;
   top: 15%;
   left: 5%;
-  color: ${withTheme(({theme}) => theme.colors.common.white)};
+  color: ${withTheme(({ theme }) => theme.colors.common.white)};
   font-size: 20px;
   z-index: 1;
 `;
@@ -61,8 +49,7 @@ export const CircleProgressBarBase = styled.div<CircleBarBaseProps>`
     --circle-border-width: 4px;
     --default-color: #545454;
     --completion-color: ${withTheme(
-      ({ $colorMode, theme }) =>
-        theme.components.ProgressBar.variants[$colorMode].midtone
+      ({ $colorMode, theme }) => theme.components.ProgressBar.variants[$colorMode].midtone
     )};
     width: var(--dot-diameter);
     height: var(--dot-diameter);

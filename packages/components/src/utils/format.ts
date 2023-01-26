@@ -1,4 +1,4 @@
-import numbro from 'numbro';
+import numbro from "numbro";
 
 // Check whether value can be converted to a usable number
 export const isNumeric = (obj: any) => {
@@ -22,7 +22,6 @@ export const formatNumber = (
     optionalMantissa: true,
     roundingFunction: dropTailingNumber ? Math.floor : Math.round,
   };
-  const format =
-    Math.floor(value).toString().length > 6 ? { ...basicFormat, average } : basicFormat;
+  const format = Math.floor(value).toString().length > 6 ? { ...basicFormat, average } : basicFormat;
   return numbro(value).format(format).toUpperCase();
 };

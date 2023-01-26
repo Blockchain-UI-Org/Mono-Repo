@@ -5,4 +5,4 @@ export interface IconSizes {
   large: string;
   xlarge?: string;
 }
-export type IconType = 'regular' | 'filled' | 'thin' | 'account' | 'crypto';
+export type IconType = "regular" | "filled" | "thin" | "account" | "crypto";

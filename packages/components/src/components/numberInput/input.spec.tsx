@@ -1,39 +1,41 @@
-import { render, screen, fireEvent } from '@testing-library/react';
-import '@testing-library/jest-dom';
-import { DefaultTheme } from '../../theme';
+import { render, screen, fireEvent } from "@testing-library/react";
+import "@testing-library/jest-dom";
+import { DefaultTheme } from "../../theme";
 
-import { NumberInput } from './numberInput';
+import { NumberInput } from "./numberInput";
 // const { blue100, blue500 } = colors;
 
-describe('Input', () => {
-  it('successfully creates an Number Input', () => {
+describe("Input", () => {
+  it("successfully creates an Number Input", () => {
     render(<NumberInput label="Label" />);
-    const input = screen.getByLabelText('Label');
+    const input = screen.getByLabelText("Label");
     expect(input).toBeInTheDocument();
   });
 
-  it('successfully creates an Input with max button', () => {
+  it("successfully creates an Input with max button", () => {
     const onClickHandler = jest.fn();
     render(<NumberInput handleMax={onClickHandler} />);
 
-    const maxButton = screen.getByText('Max');
+    const maxButton = screen.getByText("Max");
     expect(maxButton).toBeInTheDocument();
-    expect(maxButton).toHaveStyle(`background-color: ${DefaultTheme.colors.info.bg}; color: ${DefaultTheme.colors.info.midtone};`);
+    expect(maxButton).toHaveStyle(
+      `background-color: ${DefaultTheme.colors.info.bg}; color: ${DefaultTheme.colors.info.midtone};`
+    );
 
     fireEvent.click(maxButton);
     expect(onClickHandler).toHaveBeenCalledTimes(1);
   });
 
-  it('successfully creates an Number Input with icon', () => {
+  it("successfully creates an Number Input with icon", () => {
     render(<NumberInput icon="DOT" label="Label" />);
-    const icon = screen.getByAltText('DOT-image');
+    const icon = screen.getByAltText("DOT-image");
     expect(icon).toHaveStyle(`height: 32px; width: 32px;`);
     expect(icon).toBeInTheDocument();
   });
 
-  it('successfully creates an Number Input with balance', () => {
+  it("successfully creates an Number Input with balance", () => {
     render(<NumberInput balanceAmount="88,000" label="Label" />);
-    const balance = screen.getByText('Balance: 88,000');
+    const balance = screen.getByText("Balance: 88,000");
     expect(balance).toBeInTheDocument();
   });
 });
