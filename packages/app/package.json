@@ -6,7 +6,6 @@
   "dependencies": {
     "typescript": "^4.9.3",
     "lerna": "^4.0.0",
- 
     "craco": "^0.0.3",
     "web-vitals": "^1.0.1",
     "@mui/material": "^5.11.0",
@@ -63,7 +62,7 @@
     "prop-types": "^15.8.1",
     "storybook": "^6.5.13",
     "webpack": "^5.75.0",
-    "blockchain-ui": "1.0.0-alpha.1"
+    "blockchain-ui": "^1.0.0-alpha.1"
   },
   "scripts": {
     "start": "craco start",
@@ -90,6 +89,7 @@
     ]
   },
   "devDependencies": {
-    "prettier": "^2.8.3"
+    "prettier": "^2.8.3",
+    "blockchain-ui": "^1.0.0-alpha.1"
   }
 }
