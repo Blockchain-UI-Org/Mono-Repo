@@ -89,6 +89,7 @@
     ]
   },
   "devDependencies": {
-    "prettier": "^2.8.3"
+    "prettier": "^2.8.3",
+    "blockchain-ui": "1.0.0-alpha.5"
   }
 }
