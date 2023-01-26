@@ -6271,12 +6271,34 @@ bl@^4.0.3:
     inherits "^2.0.4"
     readable-stream "^3.4.0"
 
-blockchain-ui@1.0.0-alpha.5:
-  version "1.0.0-alpha.5"
-  resolved "https://registry.yarnpkg.com/blockchain-ui/-/blockchain-ui-1.0.0-alpha.5.tgz#869e3a3ba15a188fcbfbb0fa56e5cb94c7640cc9"
-  integrity sha512-7vKnei+3Rpr/nuLIU5b6xK2RaFNy4udDBvv6u+B/4WVXT6+3kndEdveYHq8nXICSrzz3y7vcc6xEO9ZsfXEKlw==
+blockchain-ui@1.0.0-alpha.1:
+  version "1.0.0-alpha.1"
+  resolved "https://registry.yarnpkg.com/blockchain-ui/-/blockchain-ui-1.0.0-alpha.1.tgz#0a61b71703e8a4c2d5461049adee6f22bf020298"
+  integrity sha512-WLTiDC/6kaSclDYhC8O+wyqa1V2EMcG/7U1mRAKmvQnlEDlSCeLbk1AYC4GOGkJuc8IXIMMhKMdDwWkOQo28Bg==
   dependencies:
+    "@mui/material" "^5.11.0"
+    "@storybook/theming" "^6.5.14"
+    "@types/numeral" "^2.0.2"
+    "@types/react-lazy-load-image-component" "^1.5.2"
+    "@types/react-slick" "^0.23.10"
+    apexcharts "^3.35.0"
+    framer-motion "^8.5.0"
+    numbro "^2.3.6"
+    numeral "^2.0.6"
+    react "^18.2.0"
+    react-apexcharts "^1.4.0"
+    react-dom "^18.2.0"
+    react-inlinesvg "^3.0.1"
+    react-lazy-load-image-component "^1.5.6"
+    react-scripts "5.0.1"
+    react-slick "^0.29.0"
+    react-use "^17.4.0"
+    simplebar-react "^2.4.3"
+    slick-carousel "^1.8.1"
+    styled-components "^5.3.6"
     typescript "^4.9.3"
+    web-vitals "^2.1.4"
+    webfontloader "^1.6.28"
 
 bluebird@^3.5.5:
   version "3.7.2"
@@ -18617,6 +18639,11 @@ web-vitals@^1.0.1:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/web-vitals/-/web-vitals-1.1.2.tgz#06535308168986096239aa84716e68b4c6ae6d1c"
   integrity sha512-PFMKIY+bRSXlMxVAQ+m2aw9c/ioUYfDgrYot0YUa+/xa0sakubWhSDyxAKwzymvXVdF4CZI71g06W+mqhzu6ig==
+
+web-vitals@^2.1.4:
+  version "2.1.4"
+  resolved "https://registry.yarnpkg.com/web-vitals/-/web-vitals-2.1.4.tgz#76563175a475a5e835264d373704f9dde718290c"
+  integrity sha512-sVWcwhU5mX6crfI5Vd2dC4qchyTqxV8URinzt25XqVh+bHEPGH4C3NPrNionCP7Obx59wrYEbNlw4Z8sjALzZg==
 
 webfontloader@^1.6.28:
   version "1.6.28"
