@@ -13,8 +13,7 @@
     "build-lib": "cd packages/components && yarn build",
     "app": "npx lerna exec --scope @blockchainui/app -- yarn start",
     "chromatic": "cd packages/components && npx chromatic --project-token=486802020566",
-    "prettify": "prettier --write ./packages",
-    "publish-library": "cd packages/components && lerna publish"
+    "prettify": "prettier --write ./packages"
   },
   "workspaces": {
     "packages": [
