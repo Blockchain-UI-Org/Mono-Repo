@@ -29,8 +29,6 @@
     - Horizontal
     - Linear
 
-### Transactions
-
 ### Calculator
 
 ### Convert/Trade Dropdown
