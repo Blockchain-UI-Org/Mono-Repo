@@ -14,7 +14,7 @@
     "app": "npx lerna exec --scope @blockchainui/app -- yarn start",
     "chromatic": "cd packages/components && npx chromatic --project-token=486802020566",
     "prettify": "prettier --write ./packages",
-    "publish-library": "cd packages/components && yarn build && npm publish"
+    "publish-library": "cd packages/components && lerna publish"
   },
   "workspaces": {
     "packages": [
