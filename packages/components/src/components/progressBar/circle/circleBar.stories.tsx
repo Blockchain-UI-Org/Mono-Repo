@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 export default {
   component: CircleProgressBar,
-  title: "Indicators/ProgressBar/Circle",
+  title: "Pending/Molecules/ProgressBar/Circle",
   argTypes: {
     themeColor: {
       defaultValue: "default",

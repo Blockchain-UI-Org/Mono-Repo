@@ -6,7 +6,7 @@ import styled from "styled-components";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Table/Table",
+  title: "Pending/Molecules/Table",
   component: Table,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {},

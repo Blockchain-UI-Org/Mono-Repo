@@ -36,7 +36,7 @@ const LineChart: FC<ChartProps> = ({
         categories: chartLabels,
       },
     });
-  }, [theme.components.Chart, theme.colors.info.midtone]);
+  }, [theme.components.Chart.common, theme.components.Chart.variants, theme.colors.info.midtone, color, chartLabels]);
 
   return (
     <Container>

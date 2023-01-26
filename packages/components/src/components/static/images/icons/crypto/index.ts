@@ -23,7 +23,6 @@ import { default as SOMNI } from "./SOMNI.svg";
 import { default as SOL } from "./SOL.svg";
 import { default as USDC } from "./USDC.svg";
 import { default as USDT } from "./USDT.svg";
-import { FunctionComponent, SVGAttributes } from "react";
 
 export const cryptoIcons: Record<CryptoSymbols, any> = {
   APE,

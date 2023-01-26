@@ -34,10 +34,6 @@ const Menu = () => {
         >
           <Iconify icon="mdi:github" sx={{ width: 22, height: 22 }} color="#161B22"></Iconify>
         </Link>
-        {/* <MenuItem>Pricing</MenuItem> */}
-        {/* <MenuItem>
-          <LoginButton>Login</LoginButton>
-        </MenuItem> */}
       </Wrapper>
     </Container>
   );
@@ -101,20 +97,3 @@ const MenuItem = styled.div`
     cursor: pointer;
   }
 `;
-
-// const LoginButton = styled.div`
-//   font-style: normal;
-//   font-weight: 700;
-//   display: flex;
-//   flex-direction: row;
-//   justify-content: center;
-//   align-items: center;
-//   width: 108px;
-//   height: 44px;
-//   border: 1px solid #2d3766;
-//   border-radius: 50px;
-
-//   :hover {
-//     border: 2px solid #2d3766;
-//   }
-// `;

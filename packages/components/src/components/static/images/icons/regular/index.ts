@@ -66,7 +66,6 @@ import { default as tooltip } from "./tooltip.svg";
 import { default as up } from "./up.svg";
 import { default as wallet } from "./wallet.svg";
 import { default as warning } from "./warning.svg";
-import { FunctionComponent, SVGAttributes } from "react";
 //@ts-ignore
 export const regularIcons: Record<string, any> = {
   accountBg: accountBg,

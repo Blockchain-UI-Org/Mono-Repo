@@ -5,7 +5,7 @@ import { DefaultTheme } from "../../../theme";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Charts/Pie",
+  title: "Pending/Charts/Pie",
   component: PieChart,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {

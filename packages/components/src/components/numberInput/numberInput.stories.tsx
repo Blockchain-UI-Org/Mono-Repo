@@ -3,7 +3,7 @@ import { NumberInput, NumberInputProps } from "./numberInput";
 
 export default {
   component: NumberInput,
-  title: "Input/ Numerical Input",
+  title: "Pending/Atoms/ Numerical Input",
 } as Meta;
 
 const Template: Story<NumberInputProps> = (args) => <NumberInput {...args}></NumberInput>;

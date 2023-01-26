@@ -1,5 +1,3 @@
-import { Subset } from "../typeutils";
-import merge from "lodash/merge";
 const regular = {
   small: "16px",
   medium: "24px",

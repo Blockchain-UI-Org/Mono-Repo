@@ -1,8 +1,13 @@
 {
   "name": "blockchain-ui",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0-alpha.3",
   "license": "MIT",
   "main": "./src/index.tsx",
+  "module": "dist/index.js",
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "private": false,
   "description": "A component library for blockchain apps.",
   "homepage": "https://www.blockchain-ui.com",
@@ -19,6 +24,15 @@
   "author": "Chris Igbojekwe <contact@blockchain-ui.com>",
   "bugs": {
     "url": "https://github.com/Blockchain-UI-Org/Library/issues"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "yarn chromatic && react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public",
+    "chromatic": "npx chromatic --exit-once-uploaded --project-token=486802020566"
   },
   "dependencies": {
     "typescript": "^4.9.3"
@@ -78,15 +92,6 @@
     "prop-types": "^15.8.1",
     "storybook": "^6.5.13",
     "webpack": "^5.75.0"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public",
-    "chromatic": "npx chromatic --project-token=486802020566"
   },
   "eslintConfig": {
     "extends": [

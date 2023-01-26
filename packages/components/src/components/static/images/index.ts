@@ -3,7 +3,8 @@ import { regularIcons } from "./icons/regular";
 
 export * from "./icons/crypto";
 export * from "./icons/regular";
-export default { ...cryptoIcons, ...regularIcons };
+const icons = { ...cryptoIcons, ...regularIcons };
+export default icons;
 
 export const imagePaths = {
   apps: "apps",

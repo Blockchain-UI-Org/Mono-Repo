@@ -4,7 +4,7 @@ import LineChart, { ChartProps } from ".";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Charts/Line",
+  title: "Approved/Charts/Line",
   component: LineChart,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {

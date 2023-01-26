@@ -7,12 +7,14 @@
     "lerna": "^4.0.0"
   },
   "scripts": {
-    "story": "cd packages/components && yarn storybook",
+    "storybook": "cd packages/components && yarn storybook",
     "build": "npx lerna run build",
+    "build-app": "cd packages/app && yarn build",
+    "build-lib": "cd packages/components && yarn build",
     "app": "npx lerna exec --scope @blockchainui/app -- yarn start",
     "chromatic": "cd packages/components && npx chromatic --project-token=486802020566",
     "prettify": "prettier --write ./packages",
-    "publish-library": "cd packages/components && npm publish"
+    "publish-library": "cd packages/components && yarn build && npm publish"
   },
   "workspaces": {
     "packages": [

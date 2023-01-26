@@ -7,5 +7,5 @@ export default create({
   barTextColor: "#FFF",
   barSelectedColor: "#CCD6FB",
   barBg: "#4C4C4C",
-  brandTitle: "Web3-UI",
+  brandTitle: "Blockchain-UI",
 });

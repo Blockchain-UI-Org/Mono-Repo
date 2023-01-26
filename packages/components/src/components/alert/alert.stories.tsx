@@ -3,7 +3,7 @@ import { Alert, AlertProps } from "./alert";
 
 export default {
   component: Alert,
-  title: "General/Alert",
+  title: "Pending/Atoms/Alert",
 } as Meta;
 
 const Template: Story<AlertProps> = (args) => (
@@ -24,7 +24,7 @@ const Template: Story<AlertProps> = (args) => (
 
 export const InfoAlert = Template.bind({});
 InfoAlert.args = {
-  message: "You have 0 KSM in your wallet. You may want to deposit here.",
+  message: "You have 0 in your wallet. You may want to deposit here.",
   type: "info",
 };
 

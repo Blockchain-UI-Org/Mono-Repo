@@ -1,4 +1,3 @@
-import merge from "lodash/merge";
 import React, { FC } from "react";
 import ReactApexChart from "react-apexcharts";
 import styled from "styled-components";

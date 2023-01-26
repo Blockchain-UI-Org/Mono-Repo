@@ -28,11 +28,11 @@ interface ButtonProps {
  * Primary UI component for user interaction
  */
 export const Button = ({ primary = false, size = "medium", backgroundColor, label, ...props }: ButtonProps) => {
-  const mode = primary ? "web3-ui-button--primary" : "web3-ui-button--secondary";
+  const mode = primary ? "blockchain-ui-button--primary" : "blockchain-ui-button--secondary";
   return (
     <button
       type="button"
-      className={["web3-ui-button", `web3-ui-button--${size}`, mode].join(" ")}
+      className={["blockchain-ui-button", `blockchain-ui-button--${size}`, mode].join(" ")}
       style={{ backgroundColor }}
       {...props}
     >

@@ -4,7 +4,7 @@ import { SparkLine } from ".";
 
 export default {
   component: SparkLine,
-  title: "Charts/Sparkline/Bar",
+  title: "Approved/Charts/Sparkline/Bar",
   args: {
     chartData: [40, 70, 75, 70, 50, 28, 7, 64, 38, 27],
     width: 300,

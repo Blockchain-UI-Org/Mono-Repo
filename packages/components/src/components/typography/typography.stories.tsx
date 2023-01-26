@@ -13,7 +13,7 @@ import {
 
 export default {
   component: TypographyComp,
-  title: "General/Typography",
+  title: "Theme/Typography",
 };
 
 const Template: Story<ITypographyProps> = (args) => <TypographyComp color="#fff" {...args} />;

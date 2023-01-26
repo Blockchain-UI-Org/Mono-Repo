@@ -25,5 +25,5 @@ const breakpoints: Record<BreakPointDirection, Record<Device, string>> = {
     desktop: `(max-width: ${MEDIA_WIDTHS["large"]}px)`,
   },
 };
-
-export default { MEDIA_WIDTHS, breakpoints };
+const media = { MEDIA_WIDTHS, breakpoints };
+export default media;

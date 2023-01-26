@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 export default {
   component: GradientProgressBar,
-  title: "Indicators/ProgressBar/Line",
+  title: "Approved/Molecules/ProgressBar/Line",
   argTypes: {
     themeColor: {
       options: ["green", "yellow", "red", "blue"],

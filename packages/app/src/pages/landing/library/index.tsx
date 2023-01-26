@@ -13,10 +13,6 @@ import { useTheme } from "@mui/material/styles";
 import { CarouselDots } from "blockchain-ui";
 import { showcase } from "./showcase";
 
-// slick-carousel
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-
 export default function ComponentsSection({ ...other }) {
   const theme = useTheme();
 
