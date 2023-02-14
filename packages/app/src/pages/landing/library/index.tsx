@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import Slider from "react-slick";
 import { m } from "framer-motion";
 import { Library } from "../styled";
-import { MotionContainer, varFade } from "blockchain-ui/src/animate";
+import { MotionContainer, varFade } from "blockchain-ui/animate";
 import Typography from "@mui/material/Typography";
 import Link from "@mui/material/Link";
 import CardContent from "@mui/material/CardContent";
@@ -10,7 +10,7 @@ import Box from "@mui/material/Box";
 // import { ImageV2 } from "blockchain-ui";
 import Card from "@mui/material/Card";
 import { useTheme } from "@mui/material/styles";
-import { CarouselDots } from "blockchain-ui/src/components";
+import { CarouselDots } from "blockchain-ui/components";
 import { showcase } from "./showcase";
 
 export default function ComponentsSection({ ...other }) {

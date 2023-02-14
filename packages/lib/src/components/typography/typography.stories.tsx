@@ -1,6 +1,6 @@
 import React from "react";
 import { Story } from "@storybook/react";
-import Flex from "../flex";
+import {Flex} from "../flex";
 import {
   Heading as HeadingComp,
   IDisplayProps,

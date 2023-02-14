@@ -1,7 +1,7 @@
 import React, { FC, useState } from "react";
 import { Icon } from "@iconify/react";
 import styled, { css } from "styled-components";
-import Image from "../../image";
+import {Image} from "../../image";
 import { withTheme, ThemeInterface } from "../../../theme";
 import { CryptoIcon } from "../../icon/icon";
 import { CryptoSymbols } from "../../static/types";

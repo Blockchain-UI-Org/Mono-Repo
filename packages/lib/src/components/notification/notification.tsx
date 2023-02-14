@@ -2,7 +2,7 @@ import React,{ FunctionComponent } from "react";
 import styled, { css } from "styled-components";
 import { withTheme } from "../../theme";
 
-import Image from "../image";
+import {Image} from "../image";
 import { regularIcons } from "../static/images/icons/regular/index";
 
 type NotificationType = "loading" | "positive" | "negative";

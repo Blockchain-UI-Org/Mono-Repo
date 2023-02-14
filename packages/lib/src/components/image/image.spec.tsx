@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import Image from ".";
+import {Image} from ".";
 import availableImages from "../static/images/index";
 import { regularIcons } from "../static/images/icons/regular";
 
