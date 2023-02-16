@@ -1,5 +1,5 @@
 import Link from "@mui/material/Link";
-import { Iconify } from "blockchain-ui/src/components";
+import { Iconify } from "blockchain-ui/components";
 
 import React from "react";
 import styled from "styled-components";

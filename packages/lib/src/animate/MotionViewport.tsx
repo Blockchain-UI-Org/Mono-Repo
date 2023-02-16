@@ -5,7 +5,7 @@ import { Box, BoxProps } from "@mui/material";
 // hooks
 import useResponsive from "../hooks/useResponsive";
 //
-import { varContainer } from "./index";
+import { varContainer } from "./variants/container";
 
 // ----------------------------------------------------------------------
 

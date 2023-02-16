@@ -1,11 +1,18 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "target": "es6",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "rootDir": "src",
     "allowJs": true,
+    "declaration": true,
+    "declarationDir": "dist",
+    "sourceMap": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
-    "baseUrl": "./src",
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
@@ -16,5 +23,13 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx"
-  }
+  },
+  "include": ["src/**/*", "index.ts"],
+  "exclude": [
+    "node_modules",
+    "build",
+    "src/**/*.stories.tsx",
+    "src/**/*.test.tsx",
+    "src/**/*.spec.tsx",
+  ]
 }

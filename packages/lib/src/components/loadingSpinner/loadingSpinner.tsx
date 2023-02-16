@@ -1,7 +1,7 @@
 import React,{ FC } from "react";
 import styled, { keyframes } from "styled-components";
 
-import Image from "../image";
+import {Image} from "../image";
 
 export interface LoadingSpinnerProps {
   width?: string;
@@ -21,8 +21,8 @@ const Circle = styled(Image)`
   width: ${({ width }) => width || "1.5rem"};
 `;
 
-export const LoadingSpinner: FC<LoadingSpinnerProps> = ({ width }) => {
+const LoadingSpinner: FC<LoadingSpinnerProps> = ({ width }) => {
   return <Circle width={width} name="spinner" />;
 };
 
-export default LoadingSpinner;
+export {LoadingSpinner};

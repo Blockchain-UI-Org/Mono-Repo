@@ -1,51 +1,161 @@
+import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import resolve from "@rollup/plugin-node-resolve";
-import typescript from "@rollup/plugin-typescript";
-import dts from "rollup-plugin-dts";
-import babel from "rollup-plugin-babel";
-import external from "rollup-plugin-peer-deps-external";
-import postcss from "rollup-plugin-postcss";
-import commonjs from "rollup-plugin-commonjs";
+import commonjs from "@rollup/plugin-commonjs";
+import typescript from "rollup-plugin-typescript2";
+import replace from "@rollup/plugin-replace";
 import { terser } from "rollup-plugin-terser";
-import svg from "rollup-plugin-svg";
+import { getFolders } from "./scripts/buildUtils";
+import generatePackageJson from "rollup-plugin-generate-package-json";
+import css from "rollup-plugin-import-css";
+import image from "@rollup/plugin-image";
+import postcss from "rollup-plugin-postcss";
+import copy from "rollup-plugin-copy";
+import cssBundle from "rollup-plugin-css-bundle";
+import autoprefixer from "autoprefixer";
+const fs = require("fs");
+
+const glob = require("glob");
+const path = require("path");
+
+const packageJson = require("./package.json");
+
+const bundleCss = () => {
+  var config = [];
+  var files = glob.sync(path.resolve(__dirname, "**/*.css"));
+  console.log("files are .. ", files);
+  files.forEach((file) => {
+    var filename = file.substr(file.lastIndexOf("/") + 1, file.length).toLowerCase();
+    console.log("filename is ", filename);
+    config.push(
+      postcss({
+        include: file,
+        extract: path.resolve(`dist/${filename}`),
+        minimize: true,
+      })
+    );
+  });
+  return config;
+};
+
+const plugins = [
+  peerDepsExternal(),
+  resolve(),
+  replace({
+    preventAssignment: true,
+    __IS_DEV__: process.env.NODE_ENV === "development",
+  }),
+  commonjs(),
+  typescript({
+    tsconfig: "./tsconfig.json",
+    useTsconfigDeclarationDir: true,
+  }),
+  // ...bundleCss(),
+  // css(),
+  postcss({
+    extract: true,
+    plugins: [autoprefixer()],
+    writeDefinitions: true,
+    module: false,
+    // extensions: [".css"],
+  }),
+  // cssBundle(),
+  image(),
+  copy({
+    targets: [
+      {
+        src: "src/components/tailwind.css",
+        dest: "dist/components",
+      },
+    ],
+  }),
+  // copy()
+  terser(),
+];
+const subfolderPlugins = (folderName, subFolder, copyCSS = false) => [
+  ...plugins,
+  // postcss({
+  //   include:  subFolder ? `src/${subFolder}/${folderName}/style.css` : `src/${folderName}/style.css`,
+  //   extract: resolve(subFolder ? `dist/${subFolder}/${folderName}/style.css` : `dist/${folderName}/style.css`,)
+  // }),
+  ...(copyCSS
+    ? [
+        copy({
+          targets: [
+            {
+              src: subFolder ? `src/${subFolder}/${folderName}/style.css` : `src/${folderName}/style.css`,
+              dest: subFolder ? `dist/${subFolder}/${folderName}/` : `dist/${folderName}/`,
+            },
+          ],
+        }),
+      ]
+    : []),
+  generatePackageJson({
+    baseContents: {
+      name: subFolder ? `${packageJson.name}/${subFolder}/${folderName}` : `${packageJson.name}/${folderName}`,
+      private: true,
+      main: "../cjs/index.js",
+      module: "./index.js",
+      types: "./index.d.ts",
+    },
+  }),
+];
+const folderBuilds = (subFolder = "") =>
+  getFolders(`./src${subFolder ? `/${subFolder}` : ""}`).map((folder) => {
+    if (fs.existsSync(subFolder ? `src/${subFolder}/${folder}/style.css` : `src/${folder}/style.css`)) {
+      return {
+        input: subFolder ? `src/${subFolder}/${folder}/index.ts` : `src/${folder}/index.ts`,
+        output: {
+          file: subFolder ? `dist/${subFolder}/${folder}/index.js` : `dist/${folder}/index.js`,
+          sourcemap: true,
+          exports: "named",
+          format: "esm",
+        },
+        plugins: subfolderPlugins(folder, subFolder, true),
+        external: ["react", "react-dom", /\.css$/u],
+      };
+    }
+    return {
+      input: subFolder ? `src/${subFolder}/${folder}/index.ts` : `src/${folder}/index.ts`,
+      output: {
+        file: subFolder ? `dist/${subFolder}/${folder}/index.js` : `dist/${folder}/index.js`,
+        sourcemap: true,
+        exports: "named",
+        format: "esm",
+      },
+      plugins: subfolderPlugins(folder, subFolder, false),
+      external: ["react", "react-dom", /\.css$/u],
+    };
+  });
 
 export default [
   {
-    input: "./src/index.ts",
+    input: ["src/index.ts"],
     output: [
       {
-        file: "dist / index.js",
+        file: packageJson.module,
+        format: "esm",
+        sourcemap: true,
+        exports: "named",
+      },
+    ],
+    plugins,
+    external: ["react", "react-dom"],
+  },
+  ...folderBuilds(""),
+  ...folderBuilds("components"),
+  {
+    input: ["src/index.ts"],
+    output: [
+      {
+        file: packageJson.main,
         format: "cjs",
         sourcemap: true,
-        inlineDynamicImports: true,
-      },
-      {
-        file: "dist / index.es.js",
-        format: "es",
         exports: "named",
-        inlineDynamicImports: true,
       },
     ],
     plugins: [
-      postcss({ plugins: [], minimize: true }),
-      babel({ exclude: "node_modules/**", presets: ["@babel/preset-react"] }),
-      external({ plugins: ["styled-components"] }),
-      resolve(),
-      commonjs({
-        ignoreGlobal: true,
-        include: /\/node_modules\//,
-        namedExports: {
-          react: Object.keys(require("react")),
-          "react-is": Object.keys(require("react-is")),
-        },
-      }),
-      svg(),
-      typescript({ tsconfig: "./tsconfig.json" }),
-      terser(),
+      ...plugins,
     ],
+    external: ["react", "react-dom", /\.css$/u],
   },
-  //   {
-  //     input: "dist/esm/types/index.d.ts",
-  //     output: [{ file: "dist/index.d.ts", format: "esm" }],
-  //     plugins: [dts.default()],
-  //   },
 ];

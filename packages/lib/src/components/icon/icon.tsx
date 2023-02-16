@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { useTheme } from "../../theme";
-import Image from "../image";
+import {Image} from "../image";
 import { CryptoSymbols } from "../static/types/crypto";
 import { IconSizes } from "../static/types/icons";
 // import { getIconSize } from 'theme/icons';

@@ -1,7 +1,7 @@
-import { ApexOptions } from "apexcharts";
+// import { ApexOptions } from "apexcharts";
 import { ThemeInterface } from "../theme";
 
-export function createBasicChartOptions(chartColors: ThemeInterface["components"]["Chart"]["common"]): ApexOptions {
+export function createBasicChartOptions(chartColors: ThemeInterface["components"]["Chart"]["common"]): any {
   const LABEL_TOTAL = {
     show: true,
     label: "Total",

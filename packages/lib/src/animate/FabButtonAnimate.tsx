@@ -7,12 +7,12 @@ import { Box, Fab, FabProps, SxProps } from "@mui/material";
 
 // ----------------------------------------------------------------------
 
-interface Props extends Omit<FabProps, "color"> {
+export interface FabButtonAnimateProps extends Omit<FabProps, "color"> {
   sxWrap?: SxProps;
   color?: "inherit" | "default" | "primary" | "secondary" | "info" | "success" | "warning" | "error";
 }
 
-const FabButtonAnimate = forwardRef<HTMLButtonElement, Props>(
+const FabButtonAnimate = forwardRef<HTMLButtonElement, FabButtonAnimateProps>(
   ({ color = "primary", size = "large", children, sx, sxWrap, ...other }, ref) => {
     const theme = useTheme();
 
